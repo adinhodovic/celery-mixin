@@ -20,5 +20,5 @@ tests:
               severity: warning
               name: failed_task
             exp_annotations:
-              summary: "A Celery task has failed to complete."
+              summary: 'A Celery task has failed to complete.'
               description: 'The task failed_task failed to complete.'
