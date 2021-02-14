@@ -116,14 +116,14 @@
          "pluginVersion": "7",
          "targets": [
             {
-               "expr": "sum(increase(celery_task_received_total{job=\"celery\"}[1d]))\n",
+               "expr": "sum(celery_worker_tasks_active)",
                "format": "time_series",
                "intervalFactor": 2,
                "legendFormat": "",
                "refId": "A"
             }
          ],
-         "title": "Tasks received by workers last 24h",
+         "title": "Tasks Active",
          "transparent": false,
          "type": "stat"
       },
@@ -164,14 +164,14 @@
          "pluginVersion": "7",
          "targets": [
             {
-               "expr": "sum(celery_worker_tasks_active)",
+               "expr": "sum(increase(celery_task_received_total{job=\"celery\"}[1d]))\n",
                "format": "time_series",
                "intervalFactor": 2,
                "legendFormat": "",
                "refId": "A"
             }
          ],
-         "title": "Tasks Active",
+         "title": "Tasks received by workers last 24h",
          "transparent": false,
          "type": "stat"
       },

@@ -89,20 +89,20 @@ local prometheus = grafana.prometheus;
       )
       .addPanel(
         statPanel.new(
-          'Tasks received by workers last 24h',
-          datasource='$datasource',
-          reducerFunction='last'
-        )
-        .addTarget(prometheus.target(taskReceived1d)),
-        gridPos={ h: 4, w: 6, x: 6, y: 1 }
-      )
-      .addPanel(
-        statPanel.new(
           'Tasks Active',
           datasource='$datasource',
           reducerFunction='last'
         )
         .addTarget(prometheus.target('sum(celery_worker_tasks_active)')),
+        gridPos={ h: 4, w: 6, x: 6, y: 1 }
+      )
+      .addPanel(
+        statPanel.new(
+          'Tasks received by workers last 24h',
+          datasource='$datasource',
+          reducerFunction='last'
+        )
+        .addTarget(prometheus.target(taskReceived1d)),
         gridPos={ h: 4, w: 6, x: 12, y: 1 }
       )
       .addPanel(
