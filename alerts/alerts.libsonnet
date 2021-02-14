@@ -2,20 +2,20 @@
   prometheusAlerts+:: {
     groups+: [
       {
-        name: 'kubernetes-resources',
+        name: 'celery',
         rules: [
           {
-            alert: 'KubeNodeNotReady',
+            alert: 'CeleryTaskFailed',
             expr: |||
-              kube_node_status_condition{%(kubeStateMetricsSelector)s,condition="Ready",status="true"} == 0
+              increase(celery_task_failed_total{%(celerySelector)s}}[%(taskInterval)s]) > 1
             ||| % $._config,
             labels: {
               severity: 'warning',
             },
             annotations: {
-              message: 'Overcommited CPU resource requests on Pods, cannot tolerate node failure.',
+              summary: 'A Celery task has failed to complete.',
+              description: 'The task {{ $labels.name }} failed to complete.',
             },
-            'for': '1h',
           },
         ],
       },
