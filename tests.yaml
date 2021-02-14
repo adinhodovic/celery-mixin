@@ -8,9 +8,9 @@ tests:
   - interval: 1m
     input_series:
       - series: 'celery_task_failed_total{job="celery", name="failed_task"}'
-        values: '0 1 1'
+        values: '0 1'
       - series: 'celery_task_failed_total{job="celery", name="successful_task"}'
-        values: '0 0 0'
+        values: '0 0'
     alert_rule_test:
       - eval_time: 5m
         alertname: CeleryTaskFailed
