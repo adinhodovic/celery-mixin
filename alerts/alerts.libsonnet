@@ -7,7 +7,7 @@
           {
             alert: 'CeleryTaskFailed',
             expr: |||
-              increase(celery_task_failed_total{%(celerySelector)s}}[%(taskInterval)s]) > 1
+              increase(celery_task_failed_total{%(celerySelector)s}[%(taskInterval)s]) > 1
             ||| % $._config,
             labels: {
               severity: 'warning',
