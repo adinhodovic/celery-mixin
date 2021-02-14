@@ -4,6 +4,7 @@
    "annotations": {
       "list": [ ]
    },
+   "description": "A dashboard that monitors Celery. It is created using the Celery-mixin for the the (Celery-exporter)[https://github.com/danihodovic/celery-exporter]",
    "editable": false,
    "gnetId": null,
    "graphTooltip": 0,
@@ -532,7 +533,7 @@
       ]
    },
    "time": {
-      "from": "now-6h",
+      "from": "now-2d",
       "to": "now"
    },
    "timepicker": {
@@ -560,8 +561,8 @@
          "30d"
       ]
    },
-   "timezone": "browser",
+   "timezone": "utc",
    "title": "Celery",
-   "uid": "123",
+   "uid": "celery-exporter",
    "version": 0
 }

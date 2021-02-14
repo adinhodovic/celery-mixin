@@ -1,5 +1,4 @@
 local grafana = import 'github.com/grafana/grafonnet-lib/grafonnet/grafana.libsonnet';
-local g = import 'github.com/grafana/jsonnet-libs/grafana-builder/grafana.libsonnet';
 local template = grafana.template;
 local statPanel = grafana.statPanel;
 local row = grafana.row;
@@ -72,7 +71,11 @@ local prometheus = grafana.prometheus;
     'celery.json':
       grafana.dashboard.new(
         'Celery',
-        uid='123'
+        description='A dashboard that monitors Celery. It is created using the Celery-mixin for the the (Celery-exporter)[https://github.com/danihodovic/celery-exporter]',
+        uid='celery-exporter',
+        time_from='now-2d',
+        time_to='now',
+        timezone='utc'
       )
       .addPanel(summaryRow, gridPos={ h: 1, w: 24, x: 0, y: 0 })
       .addPanel(
