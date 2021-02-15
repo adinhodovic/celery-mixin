@@ -70,7 +70,7 @@ local prometheus = grafana.prometheus;
 
     'celery.json':
       grafana.dashboard.new(
-        'Celery',
+        'Celery / Tasks',
         description='A dashboard that monitors Celery. It is created using the Celery-mixin for the the (Celery-exporter)[https://github.com/danihodovic/celery-exporter]',
         uid='celery-exporter',
         time_from='now-2d',
