@@ -1,3 +1,5 @@
+## This mixin has been move to the [Celery-exporter](https://github.com/danihodovic/celery-exporter/tree/master/celery-mixin) repository.
+
 # Prometheus Monitoring Mixin for Celery
 
 A set of Grafana dashboards and Prometheus alerts for Celery.
